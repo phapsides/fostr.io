@@ -17,7 +17,6 @@ const List = (props) => {
                             to={{
                                 pathname: `/${recipe.title}`,
                                 state: {
-                                    loading: false,
                                     recipe: recipe
                                 }
                             }}
