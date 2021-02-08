@@ -1,45 +1,19 @@
 
 import './App.scss';
+import Recipe from './Recipe/Recipe';
+import Detail from './Detail/Detail';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; 
 
 function App() {
 	return (
-		<article className="App">
-			<div className="container">
-				<h1>Welcome to our Digital Recipie Book</h1>
-				<section className="Book">
-					<div className="Recipie">
-						{/* <img src="" alt"" /> */}
-						<div className="overlay">
-							<h3>title</h3>
-						</div>
-					</div>
-					<div className="Recipie">
-						{/* <img src="" alt"" /> */}
-						<div className="overlay">
-							<h3>title</h3>
-						</div>
-					</div>
-					<div className="Recipie">
-						{/* <img src="" alt"" /> */}
-						<div className="overlay">
-							<h3>title</h3>
-						</div>
-					</div>
-					<div className="Recipie">
-						{/* <img src="" alt"" /> */}
-						<div className="overlay">
-							<h3>title</h3>
-						</div>
-					</div>
-					<div className="Recipie">
-						{/* <img src="" alt"" /> */}
-						<div className="overlay">
-							<h3>title</h3>
-						</div>
-					</div>
-				</section>
-			</div>
-		</article >
+		<Router>
+			<article className="App">
+				<Switch>
+					<Route exact path="/" component={Recipe} />
+					<Route exact path="/:apiRef" component={Detail} />
+				</Switch>
+			</article >
+		</Router>
 	);
 }
 
