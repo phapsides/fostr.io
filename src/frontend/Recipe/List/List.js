@@ -13,8 +13,19 @@ const List = (props) => {
             <ul className="recipe-list">
                 {recipes.map((recipe) => {
                     return (
-                        <Link to={`/${recipe.title}`} className="recipe-title">
-                            <li key={recipe.apiRef}>{recipe.title}</li>
+                        <Link 
+                            to={{
+                                pathname: `/${recipe.title}`,
+                                state: {
+                                    loading: false,
+                                    recipe: recipe
+                                }
+                            }}
+                            className="recipe-title"
+                        >
+                            <li key={recipe.apiRef}>
+                                {recipe.title}
+                            </li>
                         </Link>
                     );
                 })}
