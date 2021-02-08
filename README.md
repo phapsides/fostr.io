@@ -1,6 +1,6 @@
 # fostr.io - Coding exercise
 
-![Fostr.io](https://www.fostr.io/assets/logo.svg =50x50 "fostr.io logo")
+![Fostr.io](https://www.fostr.io/assets/logo.svg?raw=true "fostr.io logo")
 
 ## Prerequirements
 1. [Install git](https://git-scm.com/downloads)
