@@ -5,7 +5,6 @@
 ## Prerequirements
 1. [Install git](https://git-scm.com/downloads)
 2. [Install node](https://nodejs.org/en/download/)
-3. [Install Visual Studio](https://code.visualstudio.com/download)
 
 ## Setup
 
