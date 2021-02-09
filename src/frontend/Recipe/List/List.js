@@ -47,49 +47,74 @@ const List = (props) => {
 
     const { recipes } = props;
     const classes = useStyles();
- 
+
+
+    const [expanded, setExpanded] = React.useState(false);
+
+    const handleExpandClick = () => {
+        setExpanded(!expanded);
+    };
+
 
     if (!recipes || recipes.length === 0) return <p>No recipes, sorry</p>;
 
     return (
-        <>
-            <div className="recipe-list">
-                {recipes.map((recipe) => {
-                    return (
-                        <Link
-                            to={`/${recipe.title}`}
-                            className="recipe-title"
-                        >
 
+        <div className="recipe-list">
+            {recipes.map((recipe, index) => {
+                return (
 
-                            <Card className={classes.root}>
-                                <CardHeader
-                                    title={recipe.title}
-                                />
-                                <CardMedia
-                                    className={classes.media}
-                                    image="/static/images/cards/paella.jpg"
-                                    title="Paella dish"
-                                />
-                                <CardContent>
-                                    <Typography variant="body2" color="textSecondary" component="p">
-                                        {recipe.description}
-                                    </Typography>
-                                </CardContent>
-                                <CardActions disableSpacing>
-                                    <IconButton aria-label="add to favorites">
-                                        <FavoriteIcon />
+                    <Card
+                        key={recipe.index}
+                        className={classes.root}
+                    >
+                        <CardHeader
+                            avatar={
+                                <Avatar aria-label="recipe" className={classes.avatar}>
+                                    R
+                                </Avatar>
+                            }
+
+                            action={
+                                <Link
+                                    className="recipe-title"
+                                    to={{
+                                        pathname: `/${recipe.title}`,
+                                        state: {
+                                            recipe: recipe
+                                        }
+                                    }}
+                                >
+                                    <IconButton aria-label="settings">
+                                        <MoreVertIcon />
                                     </IconButton>
-                                    <IconButton aria-label="share">
-                                        <ShareIcon />
-                                    </IconButton>
-                                </CardActions>
-                            </Card>
-                        </Link>
-                    );
-                })}
-            </div>
-        </>
+                                </Link>
+                            }
+                            title={recipe.title}
+                            subheader={recipe.author.name}
+                        />
+                        <CardMedia
+                            className={classes.media}
+                            image={recipe.image}
+                            title={recipe.title}
+                        />
+                        <CardContent>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                {recipe.description}
+                            </Typography>
+                        </CardContent>
+                        <CardActions disableSpacing>
+                            <IconButton aria-label="add to favorites">
+                                <FavoriteIcon />
+                            </IconButton>
+                            <IconButton aria-label="share">
+                                <ShareIcon />
+                            </IconButton>
+                        </CardActions>
+                    </Card>
+                );
+            })}
+        </div>
     );
 };
 export default List;
