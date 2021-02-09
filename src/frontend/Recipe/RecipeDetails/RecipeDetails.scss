@@ -1,4 +1,5 @@
 .Details {
+    // TODO: Move the image to the component and update with props
     background: url('https://images.unsplash.com/photo-1454944338482-a69bb95894af?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1000&q=80')no-repeat;
     background-size: cover;
     border-radius: 0.5rem;
@@ -10,6 +11,13 @@
     .left,
     .right {
         height: 100%;
+    }
+
+    // last element should sit on the same level as author
+    .left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 
     .right {
@@ -42,7 +50,7 @@
         h3 {
             text-decoration: underline;
         }
-        
+
         ul {
             list-style: none;
             margin-top: 12px;
@@ -80,5 +88,20 @@
 
     .value {
         font-size: 11px;
+    }
+}
+
+
+.author {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #fff;
+    box-shadow: 0 0 10px #2323;
+    padding: 0.5rem 1rem;
+
+    h5 {
+        letter-spacing: 2px;
+        padding-bottom: 4px;
+        margin: 0;
     }
 }

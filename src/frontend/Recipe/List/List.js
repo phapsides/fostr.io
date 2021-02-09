@@ -22,6 +22,7 @@ const List = (props) => {
                             }}
                             className="recipe-title"
                         >
+                            {/* TODO: Check why apiRef throws an error */}
                             <li key={recipe.apiRef}>
                                 {recipe.title}
                             </li>
