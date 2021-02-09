@@ -2,4 +2,16 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 2rem;
+
+    .MuiCard-root {
+        display: flex;
+        flex-direction: column;
+        .MuiCardHeader-root {
+            height: 56px;
+        }
+        .MuiCardActions-root {
+            margin-top: auto;
+        }
+    }
+
 }
