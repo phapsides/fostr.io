@@ -12,7 +12,7 @@ function Recipe() {
 
     useEffect(() => {
         setAppState({ loading: true });
-        const apiUrl = `https://run.mocky.io/v3/436e5e6c-f3d3-47c8-8eae-bdd1473c97bb`;
+        const apiUrl = `https://run.mocky.io/v3/0b4906df-2757-4c4c-b7a2-c1cdb0199d6b`;
         fetch(apiUrl)
             .then((res) => res.json())
             .then((recipes) => {

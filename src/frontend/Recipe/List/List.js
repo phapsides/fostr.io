@@ -11,7 +11,7 @@ const List = (props) => {
     return (
         <>
             <ul className="recipe-list">
-                {recipes.map((recipe) => {
+                {recipes.map((recipe, index) => {
                     return (
                         <Link 
                             to={{
@@ -22,8 +22,8 @@ const List = (props) => {
                             }}
                             className="recipe-title"
                         >
-                            {/* TODO: Check why apiRef throws an error */}
-                            <li key={recipe.apiRef}>
+                            {/* TODO: Check why index and apiRef throw an error */}
+                            <li key={index}>
                                 {recipe.title}
                             </li>
                         </Link>
