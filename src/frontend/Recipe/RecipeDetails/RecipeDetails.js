@@ -6,7 +6,6 @@ import Header from './Header/Header';
 
 const RecipeDetails = (props) => {
 
-
     // console.log(props.location.state);
     const { recipe } = props.location.state
 
@@ -20,7 +19,9 @@ const RecipeDetails = (props) => {
                     <ul>
                         {recipe.ingredients
                             .map(ingredient =>
-                                <li>{ingredient}</li>
+                                <li>
+                                    {ingredient}
+                                </li>
                             )
                         }
                     </ul>
@@ -28,7 +29,9 @@ const RecipeDetails = (props) => {
             </div>
             <div className="right vcenter">
                 <div className="heading">
-                    <strong>{recipe.title}</strong>
+                    <strong>
+                        {recipe.title}
+                    </strong>
                 </div>
                 {/* TODO: Componetise directions */}
                 {/* TODO: Make it look like a to-do list */}
@@ -36,7 +39,9 @@ const RecipeDetails = (props) => {
                     <h3>Method:</h3>
                     {recipe.directions
                         .map(direction =>
-                            <p>{direction}</p>
+                            <p>
+                                {direction}
+                            </p>
                         )
                     }
                 </div>
