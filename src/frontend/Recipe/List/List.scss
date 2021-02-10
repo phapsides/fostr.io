@@ -6,12 +6,17 @@
     .MuiCard-root {
         display: flex;
         flex-direction: column;
+
         .MuiCardHeader-root {
             height: 56px;
         }
+
         .MuiCardActions-root {
             margin-top: auto;
         }
-    }
 
+        .MuiCardHeader-action {
+            margin-top: 0;
+        }
+    }
 }

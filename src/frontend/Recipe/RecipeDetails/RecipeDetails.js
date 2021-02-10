@@ -6,8 +6,8 @@ import Header from './Header/Header';
 
 const RecipeDetails = (props) => {
 
-    console.log(props.location.state);
 
+    // console.log(props.location.state);
     const { recipe } = props.location.state
 
     return (
@@ -16,7 +16,7 @@ const RecipeDetails = (props) => {
                 <Header />
                 {/* TODO: Componetise ingredients */}
                 <div className="ingredients">
-                    <h3>Ingredients</h3>
+                    <h3>Ingredients:</h3>
                     <ul>
                         {recipe.ingredients
                             .map(ingredient =>
@@ -25,8 +25,15 @@ const RecipeDetails = (props) => {
                         }
                     </ul>
                 </div>
+            </div>
+            <div className="right vcenter">
+                <div className="heading">
+                    <strong>{recipe.title}</strong>
+                </div>
                 {/* TODO: Componetise directions */}
+                {/* TODO: Make it look like a to-do list */}
                 <div className="directions">
+                    <h3>Method:</h3>
                     {recipe.directions
                         .map(direction =>
                             <p>{direction}</p>
@@ -38,10 +45,10 @@ const RecipeDetails = (props) => {
                     <div className="statValue">
                         <h6>PREP TIME</h6>
                         {/* TODO: Host below image locally */}
-                        <img 
-                            className="icon" 
-                            src="https://image.flaticon.com/icons/svg/1240/1240809.svg" 
-                            alt="please forget about this" 
+                        <img
+                            className="icon"
+                            src="https://image.flaticon.com/icons/svg/1240/1240809.svg"
+                            alt="please forget about this"
                         />
                         <div className="value">
                             {recipe.prep_time_min}.
@@ -50,10 +57,10 @@ const RecipeDetails = (props) => {
                     <div className="statValue">
                         <h6>COOK TIME</h6>
                         {/* TODO: Host below image locally */}
-                        <img 
-                            className="icon" 
-                            src="https://image.flaticon.com/icons/svg/1298/1298462.svg" 
-                            alt="please forget about this" 
+                        <img
+                            className="icon"
+                            src="https://image.flaticon.com/icons/svg/1298/1298462.svg"
+                            alt="please forget about this"
                         />
                         <div className="value">
                             {recipe.cook_time_min}.
@@ -62,24 +69,15 @@ const RecipeDetails = (props) => {
                     <div className="statValue">
                         <h6>SERVINGS</h6>
                         {/* TODO: Host below image locally */}
-                        <img 
-                            className="icon" 
-                            src="https://image.flaticon.com/icons/svg/135/135622.svg" 
-                            alt="please forget about this" 
+                        <img
+                            className="icon"
+                            src="https://image.flaticon.com/icons/svg/135/135622.svg"
+                            alt="please forget about this"
                         />
                         <div className="value">
                             {recipe.servings}
                         </div>
                     </div>
-                </div>
-                {/* TODO: Componetise tags */}
-                <div class="tags vcenter">
-                    {/* TODO: Print tags */}
-                </div>
-            </div>
-            <div className="right vcenter">
-                <div className="heading">
-                    <strong>{recipe.title}</strong>
                 </div>
                 <div className="author">
                     <h5>Posteb by:</h5>
@@ -91,7 +89,7 @@ const RecipeDetails = (props) => {
                     </a>
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 export default RecipeDetails;

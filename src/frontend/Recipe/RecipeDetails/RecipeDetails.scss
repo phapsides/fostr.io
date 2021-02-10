@@ -1,37 +1,38 @@
+// TODO: Amend on mobile
+// TODO: Use grid-template-areas
+
 .Details {
     // TODO: Move the image to the component and update with props
-    background: url('https://images.unsplash.com/photo-1454944338482-a69bb95894af?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1000&q=80')no-repeat;
+    background: url('https://images.unsplash.com/photo-1605709303005-0fdddfd73dc4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80')no-repeat;
     background-size: cover;
     border-radius: 0.5rem;
-    height: 720px;
+    height: 100%;
     padding: 1.25rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 5fr;
 
     .left,
     .right {
         height: 100%;
-    }
-
-    // last element should sit on the same level as author
-    .left {
         display: flex;
         flex-direction: column;
+    }
+
+    .left {
         justify-content: space-around;
     }
 
     .right {
-        display: flex;
         align-items: flex-end;
         justify-content: space-between;
-        flex-direction: column;
 
         .heading {
             letter-spacing: 3px;
-            font-size: 72px;
-            color: #535c68;
+            font-size: 48px;
+            color: #f1f1f1;
+            line-height: 1.2;
             text-align: right;
-            padding: 12px;
+            padding: 1rem;
             text-transform: uppercase;
         }
     }
@@ -42,27 +43,50 @@
         width: auto;
     }
 
-    .ingredients {
-        margin-top: 50px;
-        padding: 12px 0;
-        color: #000;
-
+    .ingredients,
+    .directions {
         h3 {
             text-decoration: underline;
         }
+    }
+
+    .ingredients {
+        margin-top: 50px;
+        padding: 1rem 2rem;
+        text-align: right;
+        width: 75%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 4px;
 
         ul {
             list-style: none;
-            margin-top: 12px;
             padding: 0;
 
             li {
                 padding: 4px 0;
-                font-size: 12px;
-                letter-spacing: 1px;
-                padding-left: 8px;
+                font-size: 14px;
+                letter-spacing: 2px;
+                padding-left: 1rem;
                 font-weight: bold;
             }
+        }
+    }
+
+    .directions {
+        margin-top: 0;
+        padding: 1rem 1.5rem;
+        text-align: left;
+        margin-left: 50px;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 4px 4px 0 4px;
+
+        p {
+            padding: 4px 0; 
+            letter-spacing: 2px;
+            margin: 0 0 1rem;
+            line-height: 1.4;
         }
     }
 }
@@ -70,18 +94,18 @@
 .statValue {
     height: 90px;
     width: 90px;
-    padding: 8px;
+    padding: 0.5rem;
     text-align: center;
     letter-spacing: 1px;
-    background: white;
-    margin-right: 8px;
-    box-shadow: 0 0 10px #2323;
+    background-color: rgba(255, 255, 255, 0.7);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin: 0.5rem 0 0 0.5rem;
+    border-radius: 4px;
 
     h6 {
-        color: #a4b0be;
+        color: #666666;
         letter-spacing: 2px;
         margin: 0;
     }
@@ -91,17 +115,21 @@
     }
 }
 
-
 .author {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background: #fff;
-    box-shadow: 0 0 10px #2323;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0;
+    color: #fff;
+    text-align: right;
+    font-size: 14px;
 
     h5 {
         letter-spacing: 2px;
-        padding-bottom: 4px;
+        padding-top: 2px;
         margin: 0;
+    }
+
+    a {
+        color: #fff;
     }
 }

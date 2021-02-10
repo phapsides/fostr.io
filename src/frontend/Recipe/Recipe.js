@@ -7,7 +7,7 @@ function Recipe() {
     const ListLoading = WithListLoading(List);
     const [appState, setAppState] = useState({
         loading: false,
-        recipes: [],
+        recipes: []
     });
 
     useEffect(() => {
@@ -26,16 +26,12 @@ function Recipe() {
     return (
         <div className='Recipe'>
             <div className='container'>
-                <h1>My Recipes</h1>
+                <h1>My Recipe Selection</h1>
+                <ListLoading
+                    isLoading={appState.loading}
+                    recipes={appState.recipes}
+                />
             </div>
-            <div className='recipe-container'>
-                <ListLoading isLoading={appState.loading} recipes={appState.recipes} />
-            </div>
-            {/* <footer>
-                <div className='footer'>
-                    Hello fostr.io
-                </div>
-            </footer> */}
         </div>
     );
 }
